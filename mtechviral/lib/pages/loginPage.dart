@@ -66,6 +66,8 @@ class _LoginPageState extends State<LoginPage> {
                             if (value == null) {
                               print("Empty UNAME");
                               return "Username cannot be empty";
+                            } else if (value.length < 3) {
+                              return "Enter a valid User Name";
                             }
                             return null;
                           }),
