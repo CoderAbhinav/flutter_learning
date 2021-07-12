@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mtechviral/pages/home.dart';
 import 'package:mtechviral/pages/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mtechviral/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
+      initialRoute: MyRoutes.homeRoute,
       routes: {
-        "/": (context) => LoginPage(),
+        MyRoutes.de: (context) => LoginPage(),
         // "/": (context) => Home(),
-        "/home": (context) => Home(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => Home(),
+        MyRoutes.login: (context) => LoginPage(),
       },
     );
   }

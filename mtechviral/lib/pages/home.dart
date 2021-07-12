@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtechviral/widgets/drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,11 +8,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[400],
+        backgroundColor: Colors.deepPurple,
         title: Text("Catologue"),
         centerTitle: true,
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: Column(
         children: <Widget>[],
       ),
