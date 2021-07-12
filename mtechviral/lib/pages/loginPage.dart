@@ -55,14 +55,15 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {
+                      onTap: () async {
                         setState(() {
                           changeButton = true;
                         });
-                        // Navigator.pushNamed(context, "/home");
+                        await Future.delayed(Duration(milliseconds: 300));
+                        Navigator.pushNamed(context, "/home");
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 50),
+                        duration: Duration(milliseconds: 250),
                         height: 50,
                         width: changeButton ? 50 : 150,
                         alignment: Alignment.center,
@@ -80,9 +81,6 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                         decoration: BoxDecoration(
                             color: Colors.deepPurple,
-                            // shape: changeButton
-                            //     ? BoxShape.circle
-                            //     : BoxShape.rectangle,
                             borderRadius:
                                 BorderRadius.circular(changeButton ? 50 : 20)),
                       ),
