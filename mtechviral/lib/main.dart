@@ -3,6 +3,7 @@ import 'package:mtechviral/pages/home.dart';
 import 'package:mtechviral/pages/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mtechviral/utils/routes.dart';
+import 'package:mtechviral/utils/myTheme.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,10 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
+      theme: myTheme.lighttheme(context),
       initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.de: (context) => LoginPage(),
