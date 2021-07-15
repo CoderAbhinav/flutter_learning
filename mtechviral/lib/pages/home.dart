@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mtechviral/widgets/drawer.dart';
 import 'package:mtechviral/models/catalogue.dart';
 import 'package:mtechviral/widgets/iteam_widget.dart';
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -14,11 +15,16 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
       drawer: MyDrawer(),
-      body: ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (context, index) {
-            return ItemWidget();
-          }),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+            itemCount: CatalogModel.items.length,
+            itemBuilder: (context, index) {
+              return ItemWidget(
+                item: CatalogModel.items[index],
+              );
+            }),
+      ),
     );
   }
 }
