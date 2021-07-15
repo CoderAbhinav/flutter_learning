@@ -44,11 +44,39 @@ class _HomeState extends State<Home> {
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-              ? ListView.builder(
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16),
                   itemCount: CatalogModel.items.length,
                   itemBuilder: (context, index) {
-                    return ItemWidget(
-                      item: CatalogModel.items[index],
+                    final item = CatalogModel.items[index];
+                    return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: GridTile(
+                          header: Container(
+                              padding: EdgeInsets.fromLTRB(10, 5, 0, 3),
+                              decoration:
+                                  BoxDecoration(color: Colors.deepPurple),
+                              child: Text(
+                                item.name,
+                                style: TextStyle(color: Colors.white),
+                              )),
+                          child: Image.network(
+                            item.image,
+                          ),
+                          footer: Container(
+                            padding: EdgeInsets.fromLTRB(10, 3, 0, 5),
+                            decoration:
+                                BoxDecoration(color: Colors.deepPurple[300]),
+                            child: Text(
+                              "\$ ${item.price.toString()}",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          )),
                     );
                   })
               : Center(
