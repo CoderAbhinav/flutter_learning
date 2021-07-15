@@ -8,6 +8,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dumyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.deepPurple,
@@ -18,10 +19,10 @@ class Home extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
-            itemCount: CatalogModel.items.length,
+            itemCount: dumyList.length,
             itemBuilder: (context, index) {
               return ItemWidget(
-                item: CatalogModel.items[index],
+                item: dumyList[index],
               );
             }),
       ),
