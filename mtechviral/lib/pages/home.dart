@@ -1,8 +1,11 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mtechviral/utils/myTheme.dart';
+import 'package:mtechviral/utils/routes.dart';
 import 'package:mtechviral/widgets/drawer.dart';
 import 'package:mtechviral/models/catalogue.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -39,6 +42,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: myTheme.creamColor,
       drawer: MyDrawer(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cartPage);
+        },
+        child: Icon(CupertinoIcons.cart),
+        backgroundColor: myTheme.darkBluishColor,
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,

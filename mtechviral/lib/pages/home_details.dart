@@ -3,6 +3,9 @@ import 'package:mtechviral/utils/myTheme.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:mtechviral/models/catalogue.dart';
 
+String dummytext =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex";
+
 class HomeDetails extends StatelessWidget {
   final Item catalog;
 
@@ -56,6 +59,7 @@ class HomeDetails extends StatelessWidget {
                       children: [
                         catalog.name.text.xl4.bold.make(),
                         catalog.desc.text.xl2.gray400.make(),
+                        dummytext.text.xl.gray400.make().p16()
                       ],
                     ).py64(),
                   )))
