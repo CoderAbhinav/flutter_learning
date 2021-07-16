@@ -32,12 +32,12 @@ class HomeDetails extends StatelessWidget {
               onPressed: () {
                 print("Sold : ${catalog.name}");
               },
-              child: "Buy".text.xl3.make(),
+              child: "Add to Cart".text.xl3.make(),
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(myTheme.darkBluishColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
-            ).wh(200, 60)
+            ).wh(150, 45)
           ],
         ),
       ),
