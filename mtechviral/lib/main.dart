@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
+      darkTheme: myTheme.darktheme(context),
       theme: myTheme.lighttheme(context),
       initialRoute: MyRoutes.homeRoute,
       routes: {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // "/": (context) => Home(),
         MyRoutes.homeRoute: (context) => Home(),
         MyRoutes.login: (context) => LoginPage(),
-        MyRoutes.cartPage:(context) => CartPage()
+        MyRoutes.cartPage: (context) => CartPage()
       },
     );
   }
