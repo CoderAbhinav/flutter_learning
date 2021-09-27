@@ -1,2 +1,2 @@
 # Idea Tracker
-![alt text](assets/IDEATRACKER_1)
+![alt text](/assets/IDEATRACKER_1)
